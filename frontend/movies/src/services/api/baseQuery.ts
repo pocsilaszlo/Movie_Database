@@ -1,10 +1,8 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import type { RootState } from '../../store/store';
 
-const apiUrl = process.env.REACT_APP_API_URL;
-
 export const baseQuery = fetchBaseQuery({
-  baseUrl: apiUrl,
+  baseUrl: process.env.REACT_APP_API_URL,
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.accessToken;
