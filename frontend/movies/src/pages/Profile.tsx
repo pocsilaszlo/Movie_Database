@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { User, Clock, Film, Bookmark, Pencil, X } from 'lucide-react';
 
 function Profile() {

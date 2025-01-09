@@ -1,4 +1,3 @@
-import React from 'react';
 import { Play, Star, Bookmark } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 

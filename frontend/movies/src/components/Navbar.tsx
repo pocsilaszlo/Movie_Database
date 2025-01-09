@@ -1,10 +1,6 @@
 import { User, LogOut } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-
-//import { logout } from '../store/slices/authSlice';
 import { useAuth } from '../hooks/useAuth';
-import { RootState } from '../store/store';
 
 const Navbar = () => {
   const { isAuthenticated, logout } = useAuth();
