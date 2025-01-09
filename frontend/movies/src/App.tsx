@@ -3,7 +3,6 @@ import { store } from './store/store';
 import { Router } from './Router';
 
 const App = () => {
-  console.log(import.meta.env.VITE_BACKEND_URL);
   return (
     <Provider store={store}>
       <Router />
