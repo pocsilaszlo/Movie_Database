@@ -1,8 +1,3 @@
 build:
-  buildpacks:
-    - heroku/java
-  config:
-    path: backend/movies
-run:
-  # A futtatási parancs, amely a build során létrehozott JAR fájlt futtatja.
-  web: java -jar backend/movies/target/movies-0.0.1-SNAPSHOT.jar
+  docker:
+    web: backend/movies/Dockerfile
