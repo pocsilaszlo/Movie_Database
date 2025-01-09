@@ -1,10 +1,8 @@
 build:
-  # A build lépés, amely Maven projektet épít. Itt navigálunk a backend mappába.
-  scripts:
-    - cd backend
-    - cd movies
-    - mvn clean install
-
+  buildpacks:
+    - heroku/java
+  config:
+    path: backend/movies
 run:
   # A futtatási parancs, amely a build során létrehozott JAR fájlt futtatja.
   web: java -jar backend/movies/target/movies-0.0.1-SNAPSHOT.jar
