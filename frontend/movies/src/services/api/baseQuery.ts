@@ -9,7 +9,6 @@ export const baseQuery = fetchBaseQuery({
     if (token) {
       headers.set('authorization', `Bearer ${token}`);
     }
-    console.log(import.meta.env.BACKEND_URL);
     return headers;
   },
 });
