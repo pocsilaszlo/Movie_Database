@@ -1,2 +1,2 @@
 # Movie_Database
-Spring boot - React - PostgreSQL - Heroku - Bolt ai application
+Spring boot - React - PostgreSQL - Heroku - Netlify application
