@@ -1,6 +1,7 @@
 package elte.hu.movies.repository;
 
 import elte.hu.movies.entity.Movie;
+import org.springframework.data.domain.Limit;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
@@ -13,4 +14,8 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
     public Page<Movie> findAll(Pageable pageable);
 
     Page<Movie> findByOrderByReleaseDateDescImdbRatingDesc(Pageable pageable);
+
+    List<Movie> findByOrderByMetaScoreDesc(Limit limit);
+
+    List<Movie> findByOrderByImdbRatingDesc(Limit limit);
 }
