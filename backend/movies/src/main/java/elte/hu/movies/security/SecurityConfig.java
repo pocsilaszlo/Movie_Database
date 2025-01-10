@@ -38,7 +38,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login","/register", "/refresh", "/movies/**", "/trending**", "/rocommanded**").permitAll()
+                        .requestMatchers("/login","/register", "/refresh", "/movies/**").permitAll()
                         .requestMatchers("/signout").authenticated()
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtCookieFilter, UsernamePasswordAuthenticationFilter.class)

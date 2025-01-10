@@ -42,12 +42,12 @@ public class MovieController {
         return new ResponseEntity<>(movie.get(), HttpStatus.OK);
     }
 
-    @GetMapping("/recommanded&limit={limit}")
+    @GetMapping("/movies?recommanded&limit={limit}")
     public ResponseEntity<List<Movie>> getRecommandedMovies(@PathVariable Integer limit) {
         return new ResponseEntity<List<Movie>>(movieService.getRecommandedMovies(), HttpStatus.OK);
     }
 
-    @GetMapping("/trending&limit={limit}")
+    @GetMapping("/movies?trending&limit={limit}")
     public ResponseEntity<List<Movie>> getTrendingMovies(@PathVariable Integer limit) {
         return new ResponseEntity<List<Movie>>(movieService.getTrendingMovies(), HttpStatus.OK);
     }
