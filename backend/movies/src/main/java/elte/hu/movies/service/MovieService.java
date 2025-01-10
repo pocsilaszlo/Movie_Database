@@ -7,6 +7,7 @@ import elte.hu.movies.repository.GenreRepository;
 import elte.hu.movies.repository.MovieRepository;
 import elte.hu.movies.repository.StarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Limit;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,14 @@ public class MovieService {
     }
 
     public Optional<Movie> getMovie(Long id) {return movieRepository.findById(id);}
+
+    public List<Movie> getRecommandedMovies(Integer limit) {
+        return movieRepository.findByMetaScoreNotNullOrderByMetaScoreDescImdbRatingDesc(Limit.of(limit));
+    }
+
+    public List<Movie> getTrendingMovies(Integer limit) {
+        return movieRepository.findByReleaseDateGreaterThanOrderByImdbRatingDescReleaseDateDesc(2017, Limit.of(limit));
+    }
 
     public List<Genre> getGenres() {
         return genreRepository.findAll();
