@@ -17,5 +17,5 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
 
     List<Movie> findByMetaScoreNotNullOrderByMetaScoreDescImdbRatingDesc(Limit limit);
 
-    List<Movie> findByOrderByImdbRatingDescReleaseDateDesc(Limit limit);
+    List<Movie> findByReleaseDateGreaterThanOrderByImdbRatingDescReleaseDateDesc(int releaseDate, Limit limit);
 }
