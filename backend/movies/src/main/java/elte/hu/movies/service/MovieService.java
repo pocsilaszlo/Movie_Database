@@ -41,7 +41,7 @@ public class MovieService {
     }
 
     public List<Movie> getTrendingMovies(Integer limit) {
-        return movieRepository.findByReleaseDateGreaterThanOrderByImdbRatingDescReleaseDateDesc(2015, Limit.of(limit));
+        return movieRepository.findByReleaseDateGreaterThanOrderByImdbRatingDescReleaseDateDesc(2017, Limit.of(limit));
     }
 
     public List<Genre> getGenres() {
