@@ -37,11 +37,11 @@ public class MovieService {
     public Optional<Movie> getMovie(Long id) {return movieRepository.findById(id);}
 
     public List<Movie> getRecommandedMovies() {
-        return movieRepository.findByOrderByMetaScoreDesc();
+        return movieRepository.findByMetaScoreNotNullOrderByMetaScoreDesc();
     }
 
-    public List<Movie> getTrendingMovies() {
-        return movieRepository.findByOrderByImdbRatingDesc();
+    public List<Movie> getTrendingMovies(Integer limit) {
+        return movieRepository.findByOrderByImdbRatingDesc(Limit.of(limit));
     }
 
     public List<Genre> getGenres() {
