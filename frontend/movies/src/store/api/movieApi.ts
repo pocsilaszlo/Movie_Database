@@ -12,6 +12,12 @@ export const movieApi = apiSlice.injectEndpoints({
     getGenres: builder.query<string[], void>({
       query: () => '/genres',
     }),
+    getRecommended: builder.query<Movie[], number>({
+      query: (limit) => `/movies/recommanded&limit=${limit}`,
+    }),
+    getTrending: builder.query<Movie[], number>({
+      query: (limit) => `/movies/trending&limit=${limit}`,
+    }),
   }),
 });
 
@@ -19,4 +25,6 @@ export const {
   useGetMoviesQuery,
   useGetMovieQuery,
   useGetGenresQuery,
+  useGetRecommendedQuery,
+  useGetTrendingQuery,
 } = movieApi;
